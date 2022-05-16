@@ -1,5 +1,5 @@
 ﻿
-[data-theme="light"] {
+/*[data-theme="light"] {
 	--color-oscuro: #211935;
 	--color-rosa: #A091CF;
 	--color-azulClaro: #1571D5;
@@ -21,6 +21,17 @@
 	--color-negro: #fff;
 	--color-blancoRGBA: rgba(0,0,0,0.24);
 	--color-negroRGBA: rgba(255,255,255,0.24);
+}*/
+:root {
+	--color-oscuro: #211935;
+	--color-rosa: #A091CF;
+	--color-azulClaro: #1571D5;
+	--color-azulOscuro: #093594;
+	--color-azulMuyClaro: #B5CDE7;
+	--color-blanco: #fff;
+	--color-negro: black;
+	--color-blancoRGBA: rgba(255,255,255,0.7);
+	--color-negroRGBA: rgba(0,0,0,0.7);
 }
 
 .tabcontent {
@@ -36,6 +47,7 @@
 	transition: all 0.4s;
 	background-color: var(--color-oscuro);
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 
 	.navbar .nav-link {
