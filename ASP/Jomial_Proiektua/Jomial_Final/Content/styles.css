@@ -47,7 +47,7 @@ h1,h2,h3,h4,h5,h7{
 
 .navbar {
     transition: all 0.4s;
-    background-color: var(--color-blanco);
+    background-color: var(--color-oscuro);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -81,7 +81,11 @@ h1,h2,h3,h4,h5,h7{
         .navbar .navbar-brand, .navbar .nav-link {
             color: #555;
         }
+  
 }
+@media (min-width: 500px) {
+}
+
 
 
 .text-small {
@@ -128,11 +132,15 @@ body {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     margin-top: 10px;
 }
+.all-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(270px, 1fr) );
+    grid-gap:1rem;
+}
 
 .info {
     width: auto;
     height: auto;
-    display: inline-block;
     margin-left: 28px;
     padding: auto;
     overflow: hidden;
@@ -140,6 +148,7 @@ body {
 }
 
     .info img {
+        object-fit: cover;
         width: 300px;
         height: 200px;
         border-radius: 10px;
@@ -181,6 +190,8 @@ table {
 
 td {
     padding-bottom: 20px;
+    font-weight:bold;
+
 }
 
 table img {

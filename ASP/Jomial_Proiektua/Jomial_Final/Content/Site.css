@@ -315,6 +315,7 @@ input {
     background-color: transparent;
     color: #eeeeee;
     border: 0;
+    width: 10rem;
 }
 
     input[type=number] {
