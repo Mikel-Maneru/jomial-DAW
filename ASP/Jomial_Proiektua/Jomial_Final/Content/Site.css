@@ -268,7 +268,12 @@ span.b {
 .bilatu {
     border-radius: 45px;
     margin: auto;
-    width: 60%;
+    width: auto;
+    display:inline-block;
+    padding-right: 0.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
     background:var(--color-oscuro);
     font-size: 15px;
     box-shadow: rgba(0, 0, 0, 0.34) 0px 7px 12px;

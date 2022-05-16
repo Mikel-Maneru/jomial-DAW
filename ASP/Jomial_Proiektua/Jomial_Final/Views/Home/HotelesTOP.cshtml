@@ -22,28 +22,30 @@
             {
                 <br><br>
                 <h4><strong>@Html.Encode(group.Key)</strong></h4><br>
-                foreach (var item in group.Take(5))
-                {
+                <div class="all-container">
+                    @foreach (var item in group.Take(5))
+                    {
 
-                    <a href="@Url.Action("Hotel", "Bilatu", new {id =item.Id})">
-                        <div class="info">
-                            @{
-                                var fuente = item.argazkiak.First().argazkia + ".png";
+                        <a href="@Url.Action("Hotel", "Bilatu", new {id =item.Id})">
+                            <div class="info">
+                                @{
+                                    var fuente = item.argazkiak.First().argazkia + ".png";
 
-                            }
-                            @{
-                                var total = item.gelak.First().kostuGaua * 3;
+                                }
+                                @{
+                                    var total = item.gelak.First().kostuGaua * 3;
 
-                            }
-                            <img src="~/Imagenes/FotosHotel/@fuente"><br>
-                            <p style="padding-top: 10px;"><img style="width: 20px;height: 20px;display: inline; vertical-align: text-top;" src="~/Imagenes/iconfinder_star_326703 (1).png"><strong style="padding-top: 12px;">@Html.DisplayFor(modelItem => item.izarrak)</strong>(326)</p>
-                            <h4>@Html.DisplayFor(modelItem => item.izena)</h4>
-                            <h3><strong>Calificaion de nuestros clientes: </strong> @Html.DisplayFor(modelItem => item.kalifikazioa)</h3>
-                            <h4><strong>@Html.DisplayFor(modelItem => item.gelak.First().kostuGaua)€</strong> - por noche.</h4>
-                            <h6><strong>Total:</strong> @total€</h6>
-                        </div>
-                    </a>
-                }
+                                }
+                                <img src="~/Imagenes/FotosHotel/@fuente"><br>
+                                <p style="padding-top: 10px;"><img style="width: 20px;height: 20px;display: inline; vertical-align: text-top;" src="~/Imagenes/iconfinder_star_326703 (1).png"><strong style="padding-top: 12px;">@Html.DisplayFor(modelItem => item.izarrak)</strong>(326)</p>
+                                <h4>@Html.DisplayFor(modelItem => item.izena)</h4>
+                                <h3><strong>Calificaion de nuestros clientes: </strong> @Html.DisplayFor(modelItem => item.kalifikazioa)</h3>
+                                <h4><strong>@Html.DisplayFor(modelItem => item.gelak.First().kostuGaua)€</strong> - por noche.</h4>
+                                <h6><strong>Total:</strong> @total€</h6>
+                            </div>
+                        </a>
+                    }
+                </div>
 
             }
         </div>

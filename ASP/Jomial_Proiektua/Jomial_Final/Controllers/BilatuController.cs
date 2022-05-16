@@ -14,7 +14,7 @@ namespace Jomial_Final.Controllers
     public class BilatuController : Controller
     {
         // GET: Bilatu
-        string Baseurl = "http://localhost:8081/api/";
+        string Baseurl = "http://localhost:8181/api/";
 
          [HttpPost]
         public async Task<ActionResult> BusquedaHotel(FormCollection collection)
