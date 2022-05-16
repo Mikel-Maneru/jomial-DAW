@@ -11,25 +11,28 @@
         </ul>
     </nav>
 </header>
-<div class="mensajea">
-    <h1>
-        SE HA COMPLETADO TU RESERVA
-    </h1><br>
-    <h4>Gracias por confiar en nosotros</h4>
-</div>
-@foreach (var item in Model)
-{
-    <div class="pricing-box-container">
-        <div class="pricing-box text-center">
-            <h5>@Html.DisplayFor(modelItem => item.hotel_izena)</h5>
-            <p class="price"><sup>€</sup>@Html.DisplayFor(modelItem => item.prezio_total)<sub>/noche</sub></p>
-            <ul class="features-list">
-                <li><strong>Fecha de entrada: </strong> @Html.DisplayFor(modelItem => item.hasiera_data)</li>
-                <li><strong>Fecha de salida: </strong>  @Html.DisplayFor(modelItem => item.amaiera_data)</li>
-                <li><strong>Correo electronico: </strong> @Html.DisplayFor(modelItem => item.emaila)</li>
-            </ul>
 
-        </div>
+    <div class="mensajea">
+        <h1>
+            SE HA COMPLETADO TU RESERVA
+        </h1><br>
+        <h4>Gracias por confiar en nosotros</h4>
     </div>
-}
+    <div class="main-container">
+        @foreach (var item in Model)
+        {
+            <div class="pricing-box-container">
+                <div class="pricing-box text-center">
+                    <h5>@Html.DisplayFor(modelItem => item.hotel_izena)</h5>
+                    <p class="price"><sup>€</sup>@Html.DisplayFor(modelItem => item.prezio_total)<sub>/total</sub></p>
+                    <ul class="features-list">
+                        <li><strong>Fecha de entrada: </strong> @Html.DisplayFor(modelItem => item.hasiera_data.Split(':')[1])</li>
+                        <li><strong>Fecha de salida: </strong>  @Html.DisplayFor(modelItem => item.amaiera_data.Split(':')[1])</li>
+                        <li><strong>Correo electronico: </strong> @Html.DisplayFor(modelItem => item.emaila)</li>
+                    </ul>
+
+                </div>
+            </div>
+        }
+    </div>
 

@@ -13,7 +13,7 @@ import org.bson.types.ObjectId;
 
 /**
  *
- * @author angulo.jorge
+ * @author loiza.oier
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Erabiltzailea{

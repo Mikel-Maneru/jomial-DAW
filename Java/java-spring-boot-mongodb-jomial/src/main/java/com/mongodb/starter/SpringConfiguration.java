@@ -15,7 +15,7 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
 /**
  *
- * @author angulo.jorge
+ * @author loiza.oier
  */
 @Configuration
 public class SpringConfiguration {

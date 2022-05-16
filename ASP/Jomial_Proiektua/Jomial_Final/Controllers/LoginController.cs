@@ -13,7 +13,7 @@ namespace Jomial_Final.Controllers
 {
     public class LoginController : Controller
     {
-        string Baseurl = "http://192.168.73.87:8080/api/";
+        string Baseurl = "http://localhost:8081/api/";
         // GET: Login
 
         [HttpPost]
@@ -50,7 +50,7 @@ namespace Jomial_Final.Controllers
                 postTask.Wait();
                 var res = postTask.Result;
                 var result = postTask.Result;
-
+                Session["erabiltzaile"] = izena;
 
                 return RedirectToAction("IndexLog", "Home", new {erabiltzaile = erabiltzailea });
 
@@ -91,6 +91,7 @@ namespace Jomial_Final.Controllers
 
                     if (Res.IsSuccessStatusCode)
                     {
+                        Session["erabiltzaile"] = usuario;
 
                         return RedirectToAction("IndexLog", "Home", new { erabiltzaile = usuario });
 

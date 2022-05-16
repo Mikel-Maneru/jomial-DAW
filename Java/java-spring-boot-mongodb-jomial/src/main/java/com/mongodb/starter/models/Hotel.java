@@ -16,7 +16,7 @@ import java.util.Objects;
 
 /**
  *
- * @author angulo.jorge
+ * @author loiza.oier
  */
 @JsonInclude(Include.NON_NULL)
 public class Hotel {

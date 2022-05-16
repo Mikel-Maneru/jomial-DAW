@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
- * @author angulo.jorge
+ * @author loiza.oier
  */
 @Repository
 public class MongoDBErrentaRepository implements ErrentaRepository {

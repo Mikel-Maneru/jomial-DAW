@@ -14,7 +14,7 @@ import com.mongodb.starter.repositories.ErabiltzaileaRepository;
 
 /**
  *
- * @author angulo.jorge
+ * @author loiza.oier
  */
 @RestController
 @RequestMapping("/api")

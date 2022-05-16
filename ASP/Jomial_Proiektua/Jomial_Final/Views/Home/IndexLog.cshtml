@@ -20,7 +20,10 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
-                <a class="nav-link"><strong>@ViewData["erabiltzaile"]</strong></a>
+                @*<a class="nav-link" id="imgTema" style="margin-right:30px !important">
+                    <img id="theme" style="cursor:pointer;width:32px;height:32px;" onclick="changeTheme()" />
+                </a>*@
+                <a class="nav-link"><strong>@Session["erabiltzaile"]</strong></a>
                 <a class="nav-link" href="@Url.Action("Index", "Home")">Cerrar Sesion</a>
             </ul>
         </div>
@@ -28,19 +31,24 @@
 </header>
 <div class="containerra"></div>
 <div class="textoBonito1"><h2>JOMIAL</h2></div>
-<div class="textoBonito2"><h4>Reserva de hoteles</h4></div>
+<div class="textoBonito2">
+    <h4>
+        Los mejores recuerdos empiezan aquí
+
+    </h4>
+</div>
 <a href="#mysection" class="textoBonito3">
     <div class="textoBonito3">
         <div class="btn btn-one">
-            <span>VAMOS</span>
+            <span>Adelante</span>
         </div>
     </div>
 </a>
 <section id="mysection">
-    <div class="containerHandia">
+    <div class="containerHandiaIndex">
         <span class="b"><img src="~/Imagenes/sevilla.jpg"><div class="textua"><strong>SEVILLA</strong><br>1 HORA EN COCHE</div></span>
         <span class="b"><img src="~/Imagenes/madrid.jpg"><div class="textua"><strong>MADRID</strong><br>6 HORAS EN COCHE</div></span>
-        <span class="b"><img src="~/Imagenes/bilbao.jpg"><div class="textua"><strong>BILBAO</strong><br>2 HORAs EN COCHE</div></span>
+        <span class="b"><img src="~/Imagenes/bilbao.jpg"><div class="textua"><strong>BILBAO</strong><br>2 HORAS EN COCHE</div></span>
         <span class="b"><img src="~/Imagenes/barcelona.jpg"><div class="textua"><strong>VALENCIA</strong><br>10 HORAS EN COCHE</div></span>
         <span class="b"><img src="~/Imagenes/sevilla.jpg"><div class="textua"><strong>GRANADA</strong><br>12 HORA EN COCHE</div></span>
     </div>
@@ -52,7 +60,7 @@
 @using (Html.BeginForm("BusquedaHotel", "Bilatu"))
 {
     @Html.AntiForgeryToken()
-    <form >
+    <form>
         <div class="bilatu">
             <div class="testuaForm">
                 <strong>UBICACION</strong><br>
@@ -63,7 +71,7 @@
                     <option value="Granada">
                     <option value="Valencia">
                     <option value="Sevilla">
-          
+
                 </datalist>
             </div>
             <div class="testuaForm">
@@ -79,116 +87,146 @@
                 <input type="number" class="other-input" placeholder="Huespedes" min="1" max="100" id="fname" name="huespe" required>
             </div>
             <div class="testuaForm" style="border-right: none;padding-right: 0; background-color: none;">
-                <button type="submit" onsubmit="return checkPassword()"  class="btn-circle btn-xl"><span><strong>Buscar</strong></span></button>
+                <button type="submit" onsubmit="return checkPassword()" class="btn-circle btn-xl"><span><strong>Buscar</strong></span></button>
             </div>
 
         </div>
     </form>
 }
 
-    <div class="container-fluid pb-0 mb-0 justify-content-center text-light ">
-        <footer>
-            <div class="row my-5 justify-content-center py-5">
-                <div class="col-11">
-                    <div class="row ">
-                        <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
-                            <h3 class="text-muted mb-md-0 mb-5 bold-text">Jomial.</h3>
-                        </div>
-                        <div class="col-xl-2 col-md-4 col-sm-4 col-12">
-                            <h6 class="mb-3 mb-lg-4 bold-text "><b>Creadores</b></h6>
-                            <ul class="list-unstyled">
-                                <li>Mikel Mañeru</li>
-                                <li>Oier Loizate</li>
-                                <li>Alvaro Viguera</li>
-                            </ul>
-                        </div>
-                        <div class="col-xl-2 col-md-4 col-sm-4 col-12">
-                            <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>Direccion</b></h6>
-                            <p class="mb-1">6,Legaño Kalea</p>
-                            <p>Berriz,Vizcaya</p>
-                        </div>
+<div class="container-fluid pb-0 mb-0 justify-content-center text-light ">
+    <footer>
+        <div class="row my-5 justify-content-center py-5">
+            <div class="col-11">
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                        <h3 class="text-muted mb-md-0 mb-5 bold-text">Jomial.</h3>
                     </div>
-                    <div class="row ">
-                        <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
-                            <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> Jomial All Rights Reserved.</small>
-                        </div>
-                        <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
-                            <h6 class="mt-55 mt-2 text-muted bold-text"><b>Contacto</b></h6><small> <span><i class="fa fa-envelope" aria-hidden="true"></i></span>jomial@gmail.com</small>
-                        </div>
-                        <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
-                            <h6 class="text-muted bold-text"><b>Contacto Importante</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> jomial@uni.eus</small>
-                        </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="mb-3 mb-lg-4 bold-text "><b>Creadores</b></h6>
+                        <ul class="list-unstyled">
+                            <li>Mikel Mañeru</li>
+                            <li>Oier Loizate</li>
+                            <li>Alvaro Viguera</li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>Direccion</b></h6>
+                        <p class="mb-1">6,Legaño Kalea</p>
+                        <p>Berriz,Vizcaya</p>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                        <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> Jomial All Rights Reserved.</small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                        <h6 class="mt-55 mt-2 text-muted bold-text"><b>Contacto</b></h6><small> <span><i class="fa fa-envelope" aria-hidden="true"></i></span>jomial@gmail.com</small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
+                        <h6 class="text-muted bold-text"><b>Contacto Importante</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> jomial@uni.eus</small>
                     </div>
                 </div>
             </div>
-        </footer>
-    </div>
-    <script type="text/javascript">
-        $(function () {
-            $(window).on('scroll', function () {
+        </div>
+    </footer>
+</div>
+<script type="text/javascript">
 
-                if ($(window).scrollTop() > 10) {
-                    $('.navbar').addClass('active');
-                } else {
-                    $('.navbar').removeClass('active');
-                }
+    document.addEventListener("DOMContentLoaded", function (event) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        $("#theme").attr("src", "/Imagenes/icoNight.png");
 
-            });
-        })
+    });
+    $(function () {
+        $(window).on('scroll', function () {
 
-        const header = document.querySelector('.containerra');
-        window.addEventListener('scroll', () => {
-            let scrollPos = window.scrollY;
-            header.style.backgroundSize = `${scrollPos + 100}%`;
-
-        })
-
-        const links = document.querySelectorAll(".textoBonito3");
-
-        for (const link of links) {
-            link.addEventListener("click", clickHandler);
-        }
-
-        function clickHandler(e) {
-            e.preventDefault();
-            const href = this.getAttribute("href");
-            const offsetTop = document.querySelector(href).offsetTop;
-
-            scroll({
-                top: offsetTop,
-                behavior: "smooth"
-            });
-        }
-        function checkPassword() {
-            date1 = form.date1.value;
-            date2 = form.date2.value;
-
-            if (date1 > date2) {
-                alert("Mete una fecha correcta!");
-                return false;
+            if ($(window).scrollTop() > 10) {
+                $('.navbar').addClass('active');
             } else {
-
-                return true;
+                $('.navbar').removeClass('active');
             }
-        }
-        $(function () {
-            var dtToday = new Date();
 
-            var month = dtToday.getMonth() + 1;
-            var day = dtToday.getDate();
-            var year = dtToday.getFullYear();
-            if (month < 10)
-                month = '0' + month.toString();
-            if (day < 10)
-                day = '0' + day.toString();
-
-            var maxDate = year + '-' + month + '-' + day;
-
-            // or instead:
-            // var maxDate = dtToday.toISOString().substr(0, 10);
-
-            $('#date1').attr('min', maxDate);
-            $('#date2').attr('min', maxDate);
         });
-    </script>
+    })
+
+    const header = document.querySelector('.containerra');
+    window.addEventListener('scroll', () => {
+        let scrollPos = window.scrollY;
+        header.style.backgroundSize = `${scrollPos + 100}%`;
+
+    })
+
+    const links = document.querySelectorAll(".textoBonito3");
+
+    for (const link of links) {
+        link.addEventListener("click", clickHandler);
+    }
+
+    function clickHandler(e) {
+        e.preventDefault();
+        const href = this.getAttribute("href");
+        const offsetTop = document.querySelector(href).offsetTop;
+
+        scroll({
+            top: offsetTop,
+            behavior: "smooth"
+        });
+    }
+    function checkPassword() {
+        date1 = form.date1.value;
+        date2 = form.date2.value;
+
+        if (date1 > date2) {
+            alert("Mete una fecha correcta!");
+            return false;
+        } else {
+
+            return true;
+        }
+    }
+    $(function () {
+        var dtToday = new Date();
+
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if (month < 10)
+            month = '0' + month.toString();
+        if (day < 10)
+            day = '0' + day.toString();
+
+        var maxDate = year + '-' + month + '-' + day;
+
+        // or instead:
+        // var maxDate = dtToday.toISOString().substr(0, 10);
+
+        $('#date1').attr('min', maxDate);
+        $('#date2').attr('min', maxDate);
+    });
+
+    const changeTheme = () => {
+      
+        var currentTheme = document.documentElement.getAttribute("data-theme");
+
+        var switchToTheme;
+
+        if (currentTheme == 'light') {
+            $("#theme").attr("src", "/Imagenes/icoLight.png");
+            localStorage.setItem('theme', 'dark');
+
+
+        } else {
+            $("#theme").attr("src", "/Imagenes/icoNight.png");
+            localStorage.setItem('theme', 'light');
+
+
+        }
+
+        document.documentElement.setAttribute("data-theme", localStorage.getItem('theme'));
+
+        //location.reload();
+    }
+
+</script>
 

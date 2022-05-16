@@ -14,7 +14,7 @@ import com.mongodb.starter.repositories.ErrentaRepository;
 
 /**
  *
- * @author angulo.jorge
+ * @author loiza.oier
  */
 @RestController
 @RequestMapping("/api")

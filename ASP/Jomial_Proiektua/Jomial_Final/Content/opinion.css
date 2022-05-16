@@ -1,4 +1,29 @@
-﻿.tabcontent {
+﻿
+[data-theme="light"] {
+	--color-oscuro: #211935;
+	--color-rosa: #A091CF;
+	--color-azulClaro: #1571D5;
+	--color-azulOscuro: #093594;
+	--color-azulMuyClaro: #B5CDE7;
+	--color-blanco: #fff;
+	--color-negro: black;
+	--color-blancoRGBA: rgba(255,255,255,0.24);
+	--color-negroRGBA: rgba(0,0,0,0.24);
+}
+
+[data-theme="dark"] {
+	--color-oscuro: #EEEEEE;
+	--color-rosa: #00ADB5;
+	--color-azulClaro: #3A4750;
+	--color-azulOscuro: #3A4750;
+	--color-azulMuyClaro: #3A4750;
+	--color-blanco: #303841;
+	--color-negro: #fff;
+	--color-blancoRGBA: rgba(0,0,0,0.24);
+	--color-negroRGBA: rgba(255,255,255,0.24);
+}
+
+.tabcontent {
 	display: none;
 }
 
@@ -9,12 +34,12 @@
 
 .navbar {
 	transition: all 0.4s;
-	background-color: #3a4750;
+	background-color: var(--color-blanco);
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 	.navbar .nav-link {
-		color: #fff;
+		color: var(--color-oscuro);
 	}
 
 		.navbar .nav-link:hover,
@@ -49,6 +74,7 @@
 
 body {
 	min-height: 110vh;
+	background: var(--color-blanco);
 }
 
 ::-webkit-scrollbar {
@@ -66,16 +92,17 @@ body {
 	}
 
 * {
-	font-family: "Poppins", sans-serif;
+	font-family: "Montserrat", sans-serif;
 }
 
 .container-fluid {
 	overflow: hidden;
 	margin-top: 250px;
-	background: #262626;
-	color: #627482 !important;
+	background: var(--color-negro) !important;
+	color: var(--color-blanco) !important;
 	margin-bottom: 0;
 	padding-bottom: 0;
+	border-top: 1px solid var(--color-blanco)
 }
 
 .containerHandia {
@@ -84,6 +111,9 @@ body {
 	height: auto;
 	margin: auto;
 }
+	.containerHandia h2, .containerRound {
+		color: var(--color-negro)
+	}
 
 	.containerHandia h2 {
 		font-weight: bold;
@@ -94,14 +124,20 @@ body {
 		padding: 10px;
 		border-radius: 25px;
 		border: 1px solid #555;
-		color: black;
+		color: var(--color-negro);
 		font-size: 15px;
 	}
-
+hr {
+	border-color: var(--color-negro);
+}
+h5{
+	font-weight:bold;
+}
 .containerTxikia {
-	width: 76%;
+	width: 65%;
 	float: left;
 	height: auto;
+	background-color:#fff;
 }
 
 .containerTxikiaIMG {
@@ -127,5 +163,8 @@ body {
 	background-color: #fff;
 	width: auto;
 	height: 280px;
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	box-shadow: var(--color-negroRGBA) 0px 3px 8px;
+}
+section{
+	background:var(--color-blanco)
 }

@@ -24,7 +24,7 @@
 
 ## Swagger
 - Swagger is already configured in this project in `SwaggerConfig.java`.
-- The API can be seen at [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html).
+- The API can be seen at [http://localhost:8081/swagger-ui.html](http://localhost:8081/swagger-ui.html).
 - You can also try the entire REST API directly from the Swagger interface!
 
 ## Features showcase

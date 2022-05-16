@@ -18,7 +18,7 @@ import static com.google.common.base.Predicates.not;
 
 /**
  *
- * @author angulo.jorge
+ * @author loiza.oier
  */
 @Configuration
 @EnableSwagger2

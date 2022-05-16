@@ -14,9 +14,10 @@ namespace Jomial_Final.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        string Baseurl = "http://192.168.73.87:8080/api/";
+        string Baseurl = "http://localhost:8081/api/";
         public async Task<ActionResult> Index()
         {
+            Session["tema"] = "light";
             return View();
 
         }

@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /**
  *
- * @author angulo.jorge
+ * @author loiza.oier
  */
 public class Argazkia {
     private String argazkia;

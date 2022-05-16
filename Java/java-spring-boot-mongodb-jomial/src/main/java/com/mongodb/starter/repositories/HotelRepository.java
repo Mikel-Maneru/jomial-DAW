@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  *
- * @author angulo.jorge
+ * @author loiza.oier
  */
 @Repository
 public interface HotelRepository {
